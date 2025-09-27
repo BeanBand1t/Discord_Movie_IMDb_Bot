@@ -71,6 +71,7 @@ async def movieInfo(interaction: discord.interactions, query: str):
             description=plot,
             color=discord.Color.red()
         )
+        embed.set_footer(text="Bot made by BeanBand1t")
         embed.add_field(name="IMDb Rating", value=rating, inline=True)
         if poster and poster != "N/A":
             embed.set_thumbnail(url=poster)
@@ -81,5 +82,6 @@ async def movieInfo(interaction: discord.interactions, query: str):
 
     except Exception as e:
         await interaction.followup.send(f'Error fetching movie: {e}')
+
 
 client.run(TOKEN)
